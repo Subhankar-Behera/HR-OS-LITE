@@ -1,10 +1,14 @@
 package com.clogicsoftech.hroslite.department.dto;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class DepartmentRequest {
 
-    private String name;
+	@NotBlank(message = "Department name is required")
+	private String name;
 
-    private String code;
+	@NotBlank(message = "Department code is required")
+	private String code;
 
     private String description;
 

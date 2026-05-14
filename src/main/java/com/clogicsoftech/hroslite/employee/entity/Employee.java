@@ -6,6 +6,7 @@ import com.clogicsoftech.hroslite.auth.entity.User;
 
 import jakarta.persistence.*;
 import lombok.*;
+import com.clogicsoftech.hroslite.department.entity.Department;
 
 @Entity
 @Table(name = "employees")
@@ -44,8 +45,13 @@ public class Employee {
     private String employmentType;
 
     private String status;
+    
 
     @OneToOne
     @JoinColumn(name = "user_id")
     private User user;
+    
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
 }

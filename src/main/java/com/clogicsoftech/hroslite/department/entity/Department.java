@@ -1,6 +1,9 @@
 package com.clogicsoftech.hroslite.department.entity;
 
 import jakarta.persistence.*;
+import java.util.List;
+import com.clogicsoftech.hroslite.employee.entity.Employee;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "departments")
@@ -10,6 +13,10 @@ public class Department {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @OneToMany(mappedBy = "department")
+    @JsonIgnore
+    private List<Employee> employees;
+    
     @Column(nullable = false)
     private String name;
 
