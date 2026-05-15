@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import com.clogicsoftech.hroslite.auth.dto.AuthResponse;
 import com.clogicsoftech.hroslite.auth.dto.LoginRequest;
 import com.clogicsoftech.hroslite.auth.dto.RegisterRequest;
-import com.clogicsoftech.hroslite.auth.entity.Role;
+
 import com.clogicsoftech.hroslite.auth.entity.User;
 import com.clogicsoftech.hroslite.auth.repository.UserRepository;
 import com.clogicsoftech.hroslite.security.JwtService;
@@ -39,7 +39,7 @@ public class AuthService {
                 .name(request.getName())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .role(Role.EMPLOYEE)
+                .role(request.getRole())
                 .build();
 
         userRepository.save(user);

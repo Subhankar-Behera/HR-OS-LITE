@@ -2,14 +2,14 @@ package com.clogicsoftech.hroslite.auth.entity;
 
 public enum Role {
 
-    SUPER_ADMIN,
+    EMPLOYEE,
 
-    HR_ADMIN,
+    RECRUITER,
 
     MANAGER,
 
-    EMPLOYEE,
+    HR_ADMIN,
 
-    RECRUITER
+    SUPER_ADMIN
 
 }
